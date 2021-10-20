@@ -28,17 +28,15 @@ jobs:
         id: build
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: checkLicenses build test runGametest publish
+          arguments: checkLicenses build publish
           gradle-version: wrapper
         env:
           SNAPSHOT: true
           ORG_GRADLE_PROJECT_mavenUsername: ${{ secrets.MAVEN_USER }}
           ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.MAVEN_PASS }}
 
-      - name: Copy GameTest Results
-        run: cp run/TEST-gametest.xml build/test-results/test/
-
       - name: Notify Discord
+        if: always()
         uses: TeamGalacticraft/discord-reporter@main
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
