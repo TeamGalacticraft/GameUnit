@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+
+  "id": "gameunit",
+  "version": "$version",
+  "name": "GameUnit",
+  "description": "A small utility mod for saving gametest results in the JUnit5 XML format.",
+  "license": "MIT",
+
+  "contact": {
+    "homepage": "https://galacticraft.team/",
+    "sources": "https://github.com/TeamGalacticraft/GameUnit/",
+    "issues": "https://github.com/TeamGalacticraft/GameUnit/issues/"
+  },
+  "authors": [
+    {
+      "name": "Team Galacticraft",
+      "contact": {
+        "homepage": "https://github.com/TeamGalacticraft",
+        "discord": "https://discord.gg/n3QqhMYyFK"
+      }
+    }
+  ],
+  "contributors": [
+    {
+      "name": "PyrrhaDev",
+      "contact": {
+        "homepage": "https://pyrrha.dev"
+      }
+    }
+  ],
+
+  "environment": "server",
+  "mixins": [ "gameunit.mixins.json" ],
+  "depends": {
+    "minecraft": ">=1.17.1",
+    "fabricloader": "*",
+    "fabric-api-base": "*",
+    "fabric-gametest-api-v1": "*"
+  }
+}
